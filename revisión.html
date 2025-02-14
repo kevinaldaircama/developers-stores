@@ -1,242 +1,128 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisión de Aplicaciones</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #2b5876, #4e4376);
-        color: #fff;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: auto;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(10px);
-    }
-
-    h1 {
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-    }
-
-    .app-card {
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .app-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .app-card img {
-        width: 60px;
-        height: 60px;
-        border-radius: 10px;
-        border: 3px solid #fff;
-    }
-
-    .buttons {
-        display: flex;
-        gap: 10px;
-    }
-
-    .buttons button {
-        padding: 8px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        color: white;
-        transition: transform 0.2s ease, opacity 0.3s ease;
-    }
-
-    .buttons button:hover {
-        transform: scale(1.1);
-        opacity: 0.85;
-    }
-
-    .btn-ver {
-        background: linear-gradient(135deg, #007bff, #0056b3);
-    }
-
-    .btn-aprobar {
-        background: linear-gradient(135deg, #28a745, #1e7e34);
-    }
-
-    .btn-rechazar {
-        background: linear-gradient(135deg, #dc3545, #a71d2a);
-    }
-
-    .modal {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        max-width: 600px;
-        background: rgba(255, 255, 255, 0.15);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
-        text-align: left;
-        color: white;
-    }
-
-    .modal img {
-        width: 120px;
-        border-radius: 10px;
-        border: 2px solid #fff;
-        display: block;
-        margin: 10px 0;
-    }
-
-    .close {
-        float: right;
-        cursor: pointer;
-        color: #ff4d4d;
-        font-size: 26px;
-        transition: color 0.3s ease;
-    }
-
-    .close:hover {
-        color: #ff0000;
-    }
-
-</style>
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; text-align: center; padding: 20px; }
+        h1 { margin-bottom: 30px; }
+        .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: auto; }
+        .section { flex: 1; min-width: 30%; background: #ffffff; color: #333; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        .app { background: #f4f4f4; padding: 15px; border-radius: 8px; margin: 15px 0; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); }
+        .app img { max-width: 100px; border-radius: 5px; margin-bottom: 10px; }
+        button { padding: 10px; margin: 5px; border-radius: 5px; border: none; cursor: pointer; font-weight: bold; }
+        .ver { background: #1e90ff; color: white; }
+        .aprobar { background: #28a745; color: white; }
+        .rechazar { background: #dc3545; color: white; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; }
+        .modal-content { background: white; color: black; padding: 25px; border-radius: 10px; width: 80%; max-width: 800px; text-align: left; }
+        .cerrar { background: red; color: white; border: none; padding: 8px 20px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; align-items: center; }
+            .section { width: 100%; margin-bottom: 20px; }
+        }
+    </style>
 </head>
 <body>
 
+    <h1>📋 Revisión de Aplicaciones</h1>
+
     <div class="container">
-        <h1>Aplicaciones en Revisión</h1>
-        <div id="pendientes"></div>
 
-        <h1>Aplicaciones Aprobadas</h1>
-        <div id="aprobadas"></div>
+        <!-- Sección de Pendientes -->
+        <div class="section">
+            <h2>⏳ Pendientes</h2>
+            <div id="pendientes">
+                <p>No hay aplicaciones pendientes.</p>
+            </div>
+        </div>
 
-        <h1>Aplicaciones Rechazadas</h1>
-        <div id="rechazadas"></div>
+        <!-- Sección de Aprobadas -->
+        <div class="section">
+            <h2>✅ Aprobadas</h2>
+            <div id="aprobadas">
+                <p>No hay aplicaciones aprobadas.</p>
+            </div>
+        </div>
+
+        <!-- Sección de Rechazadas -->
+        <div class="section">
+            <h2>❌ Rechazadas</h2>
+            <div id="rechazadas">
+                <p>No hay aplicaciones rechazadas.</p>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Modal para ver detalles -->
+    <!-- Modal de Ver Detalles -->
     <div id="modal" class="modal">
-        <span class="close" onclick="cerrarModal()">&times;</span>
-        <h2>Detalles de la Aplicación</h2>
-        <p><strong>Nombre:</strong> <span id="modalNombre"></span></p>
-        <p><strong>Versión:</strong> <span id="modalVersion"></span></p>
-        <p><strong>Creador:</strong> <span id="modalCreador"></span></p>
-        <p><strong>Categoría:</strong> <span id="modalCategoria"></span></p>
-        <p><strong>Política de Privacidad:</strong> <a id="modalPolitica" target="_blank"></a></p>
-        <p><strong>Correo de Soporte:</strong> <span id="modalCorreo"></span></p>
-        <p><strong>¿Contiene Anuncios?:</strong> <span id="modalAnuncios"></span></p>
-        <p><strong>¿Está en Beta?:</strong> <span id="modalBeta"></span></p>
-        <p><strong>¿Se actualizará?:</strong> <span id="modalActualizacion"></span></p>
-        <p><strong>Logo:</strong></p>
-        <img id="modalLogo">
-        <p><strong>Captura de Pantalla:</strong></p>
-        <img id="modalCaptura">
+        <div class="modal-content">
+            <h2>Detalles de la Aplicación</h2>
+            <p id="appDetalles"></p>
+            <button class="cerrar" onclick="cerrarModal()">Cerrar</button>
+        </div>
     </div>
 
     <script>
-        function cargarAplicaciones() {
-            let aplicaciones = JSON.parse(localStorage.getItem("aplicaciones")) || [];
-            let pendientes = document.getElementById("pendientes");
-            let aprobadas = document.getElementById("aprobadas");
-            let rechazadas = document.getElementById("rechazadas");
-
-            pendientes.innerHTML = "";
-            aprobadas.innerHTML = "";
-            rechazadas.innerHTML = "";
-
-            aplicaciones.forEach((app, index) => {
-                let div = document.createElement("div");
-                div.classList.add("app-card");
-                div.innerHTML = `
-                    <img src="${app.logo}">
-                    <p><strong>${app.nombre}</strong> (v${app.version})</p>
-                    <div class="buttons">
-                        <button class="btn-ver" onclick="verDetalles(${index})">Ver</button>
-                        <button class="btn-aprobar" onclick="aprobar(${index})">Aprobar</button>
-                        <button class="btn-rechazar" onclick="rechazar(${index})">Rechazar</button>
-                    </div>
-                `;
-
-                if (app.estado === "Pendiente") {
-                    pendientes.appendChild(div);
-                } else if (app.estado === "Aprobada") {
-                    aprobadas.appendChild(div);
-                } else {
-                    rechazadas.appendChild(div);
-                }
-            });
+        function cargarApps() {
+            let appData = localStorage.getItem('appData');
+            if (appData) {
+                appData = JSON.parse(appData);
+                let appHTML = `<div class="app">
+                    <img src="${appData.logo}" alt="Logo de la app">
+                    <h3>${appData.nombre}</h3>
+                    <p><strong>Versión:</strong> ${appData.version}</p>
+                    <p><strong>Categoría:</strong> ${appData.categoria}</p>
+                    <p><strong>Plataforma:</strong> ${appData.plataforma}</p>
+                    <button class="ver" onclick="mostrarModal('${appData.nombre}', '${appData.version}', '${appData.descripcion}', '${appData.creador}', '${appData.correo}', '${appData.politica}', '${appData.anuncios}', '${appData.beta}', '${appData.imagen}', '${appData.screenshot}')">Ver</button>
+                    <button class="aprobar" onclick="aprobarApp()">Aprobar</button>
+                    <button class="rechazar" onclick="rechazarApp()">Rechazar</button>
+                </div>`;
+                document.getElementById('pendientes').innerHTML = appHTML;
+            }
         }
 
-        function verDetalles(index) {
-            let apps = JSON.parse(localStorage.getItem("aplicaciones"));
-            let app = apps[index];
-
-            document.getElementById("modalNombre").innerText = app.nombre;
-            document.getElementById("modalVersion").innerText = app.version;
-            document.getElementById("modalCreador").innerText = app.creador;
-            document.getElementById("modalCategoria").innerText = app.categoria;
-            document.getElementById("modalPolitica").href = app.politica;
-            document.getElementById("modalPolitica").innerText = "Ver Política";
-            document.getElementById("modalCorreo").innerText = app.correo;
-            document.getElementById("modalAnuncios").innerText = app.anuncios;
-            document.getElementById("modalBeta").innerText = app.beta;
-            document.getElementById("modalActualizacion").innerText = app.actualizacion;
-            document.getElementById("modalLogo").src = app.logo;
-            document.getElementById("modalCaptura").src = app.captura;
-
-            document.getElementById("modal").style.display = "block";
+        function mostrarModal(nombre, version, descripcion, creador, correo, politica, anuncios, beta, logo, screenshot) {
+            document.getElementById('appDetalles').innerHTML = `
+                <strong>Nombre:</strong> ${nombre}<br>
+                <strong>Versión:</strong> ${version}<br>
+                <strong>Descripción:</strong> ${descripcion}<br>
+                <strong>Creador:</strong> ${creador}<br>
+                <strong>Correo de soporte:</strong> ${correo}<br>
+                <strong>Política de Privacidad:</strong> <a href="${politica}" target="_blank">${politica}</a><br>
+                <strong>Contiene anuncios:</strong> ${anuncios}<br>
+                <strong>¿Está en Beta?:</strong> ${beta}<br><br>
+                <img src="${logo}" alt="Logo de la app" style="max-width: 100px; border-radius: 5px;"><br>
+                <img src="${screenshot}" alt="Captura de la app" style="max-width: 200px; border-radius: 5px;">
+            `;
+            document.getElementById('modal').style.display = 'flex';
         }
 
         function cerrarModal() {
-            document.getElementById("modal").style.display = "none";
+            document.getElementById('modal').style.display = 'none';
         }
 
-        function aprobar(index) {
-            let apps = JSON.parse(localStorage.getItem("aplicaciones"));
-            apps[index].estado = "Aprobada";
-            localStorage.setItem("aplicaciones", JSON.stringify(apps));
-            alert("La aplicación fue aprobada.");
-            cargarAplicaciones();
+        function aprobarApp() {
+            let appData = localStorage.getItem('appData');
+            if (appData) {
+                document.getElementById('pendientes').innerHTML = "<p>No hay aplicaciones pendientes.</p>";
+                document.getElementById('aprobadas').innerHTML = appData;
+                localStorage.removeItem('appData');
+            }
         }
 
-        function rechazar(index) {
-            let apps = JSON.parse(localStorage.getItem("aplicaciones"));
-            apps[index].estado = "Rechazada";
-            localStorage.setItem("aplicaciones", JSON.stringify(apps));
-            alert("La aplicación fue rechazada.");
-            cargarAplicaciones();
+        function rechazarApp() {
+            let appData = localStorage.getItem('appData');
+            if (appData) {
+                document.getElementById('pendientes').innerHTML = "<p>No hay aplicaciones pendientes.</p>";
+                document.getElementById('rechazadas').innerHTML = appData;
+                localStorage.removeItem('appData');
+            }
         }
 
-        cargarAplicaciones();
+        cargarApps();
     </script>
 
 </body>
