@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="usuarioEmail" placeholder="Usuario o Correo" required>
+            <input type="password" id="passwordLogin" placeholder="Contraseña" required>
+            <button type="submit">Continuar</button>
+        </form>
+
+        <p>Si no tienes una cuenta, dale clic en Registrarse.</p>
+        <a href="home.html"><button class="btn-secundario">Registrarse</button></a>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const usuarioIngresado = document.getElementById("usuarioEmail").value;
+            const passwordIngresado = document.getElementById("passwordLogin").value;
+
+            const usuarioRegistrado = localStorage.getItem("usuario");
+            const passwordRegistrado = localStorage.getItem("password");
+
+            if (usuarioIngresado === usuarioRegistrado && passwordIngresado === passwordRegistrado) {
+                mostrarModal("Inicio de sesión exitoso. <br> <a href='index.html'><button>Continuar</button></a>");
+            } else {
+                mostrarModal("Datos no registrados. Intente de nuevo.");
+            }
+        });
+
+        function mostrarModal(mensaje) {
+            const modal = document.getElementById("modal");
+            const modalText = document.getElementById("modal-text");
+
+            modalText.innerHTML = mensaje;
+            modal.style.display = "flex";
+        }
+    </script>
+</body>
+</html>

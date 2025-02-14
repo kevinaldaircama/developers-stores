@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Aplicación</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: black;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            background: -webkit-linear-gradient(45deg, #ff416c, #ff4b2b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+
+        .hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 Subir Aplicación</h1>
+        <p id="mensaje-bienvenida">Bienvenido! Completa los datos para subir tu app.</p>
+
+        <form id="appForm">
+            <div class="section">
+                <label>Selecciona Plataforma:</label>
+                <select id="plataforma" required>
+                    <option value="">Seleccione...</option>
+                    <option value="Android">Android</option>
+                    <option value="iPhone">iPhone</option>
+                </select>
+            </div>
+
+            <div id="formularioExtra" class="hidden">
+                <div class="section">
+                    <label>Nombre de la App:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="section">
+                    <label>Versión:</label>
+                    <input type="text" id="version" required>
+                </div>
+                <div class="section">
+                    <label>Nombre del Creador:</label>
+                    <input type="text" id="creador" required>
+                </div>
+                <div class="section">
+                    <label>Subir Logo:</label>
+                    <input type="file" id="logo" accept="image/*" required>
+                </div>
+                <div class="section">
+                    <label>Subir Captura de Pantalla:</label>
+                    <input type="file" id="captura" accept="image/*" required>
+                </div>
+                <div class="section">
+                    <label>Categoría:</label>
+                    <input type="text" id="categoria" required>
+                </div>
+                <div class="section">
+                    <label>Política de Privacidad (URL):</label>
+                    <input type="url" id="politica" required>
+                </div>
+                <div class="section">
+                    <label>Correo de Soporte:</label>
+                    <input type="email" id="correo" required>
+                </div>
+                <div class="section">
+                    <label>¿Contiene Anuncios?</label>
+                    <select id="anuncios">
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="section">
+                    <label>¿Está en Beta?</label>
+                    <select id="beta">
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="section">
+                    <label>¿Se actualizará?</label>
+                    <select id="actualizacion">
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <button type="submit">🚀 Enviar para Revisión</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("plataforma").addEventListener("change", function() {
+            let formularioExtra = document.getElementById("formularioExtra");
+            if (this.value) {
+                formularioExtra.classList.add("visible");
+                formularioExtra.classList.remove("hidden");
+            } else {
+                formularioExtra.classList.add("hidden");
+                formularioExtra.classList.remove("visible");
+            }
+        });
+
+        document.getElementById("appForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("✅ Su aplicación se envió con éxito y está en revisión.");
+            window.location.href = "revisar.html";
+        });
+
+        setTimeout(() => {
+            document.getElementById("mensaje-bienvenida").style.opacity = "0";
+        }, 4000);
+    </script>
+
+</body>
+</html>

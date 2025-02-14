@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #35424a, #e8491d);
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header img {
+            width: 100px; /* Ajusta el tamaño del ícono aquí */
+            margin-bottom: 20px;
+        }
+        .cta {
+            background: #e8491d;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-size: 18px;
+        }
+        .cta:hover {
+            background: #c43e17;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+        .feature {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 30%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .feature h3 {
+            color: #35424a;
+        }
+        .screenshots {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        .screenshot {
+            margin: 10px;
+        }
+        .screenshot img {
+            max-width: 300px; /* Ajusta el tamaño de las capturas aquí */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #35424a;
+            color: #ffffff;
+        }
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+            .feature {
+                flex: 1 1 100%;
+            }
+            .screenshots {
+                flex-direction: column;
+            }
+        }
+        .extra-info {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .extra-info p {
+            font-size: 16px;
+        }
+        .emoji {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="data:image/x-icon;base64,AAABAAEAMDAAAAEAIACoJQAAFgAAACgAAAAwAAAAYAAAAAEAIAAAAAAAgCUAAAAAAAAAAAAAAAAAAAAAAAD8/Pz//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//3+/v/9/v7//f7+//3+/v/9/v7//f7+//3+/v/9/v7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//7+/v///////v7///z8/P/7/Pv//Pz7//z8/P/8/fz//P38//z9/P/8/fz//f7+///////+/v7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3///////bz8v+2lIf/kkEA/4wvAP+MMQD/jDEA/4wyAP+MMgD/jDEA/4wxAP+LLwD/kDwA/7SQhP/08e///v////39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/+/v7/9vTz/5ZMAP+VTxz/mVcw/5laNf+ZWjX/mVo1/5paNv+aWjb/mlo2/5paNv+aWjb/mlcx/5hQH/+WRwD/9PDv//7+///9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f//////upiI/5pTG/+bUhH/oF81/5lSEf+dXjb/n143/59eNv+fXjb/nl42/59eNv+bVBj/oGA0/5tSD/+cViD/uZOB///////9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/+////n1UA/51VCP/RvbP//////9G8sf+dVQX/oWM2/6FjNv+hYzb/oWI1/51YFv/HrJ///////9fGvf+eVQD/nU8A//3+/v/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/v/9/v3/nk8A/6JZAP/dzcX///////7///+hWQL/o2At/59WAP+gVgD/pWIt/59OAP/6+ff//////+LVzv+jWAD/n0wA//z8+//9/v7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/+/v7/o1cA/6poLf+tcDv////////////izbj/x4km/+ne1//p39n/q205/8+2qP///////////7B5TP+paCv/olIA//z8/P/9/v7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/v7/qFwA/69vMv+pYAD/4NDF///////8+/n/07OY////////////59zX/+HUy///////49XL/6hfAP+ubzH/ploA//z8/P/9/v7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/v7/rWIA/7JyMf+ycCv/tnk+////////////2cKz/93JvP/j1s7/5tjQ/7yHW//Yw7T/snMw/7ByLf+yczD/q14A//z8/P/9/v7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/v/9/v3/sWcA/7d3L/+3dzD/smoA/+PTxv///////fz7/65iAP+uWwD/7uXd//Hr5f+vZwD/tHUq/7Z4MP+3dzD/sGMA//z8/P/9/f7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/v/9/v3/tWwA/7l7Lv+5fC7/uXoo/72BO////////////9i+q//RrpL////////////Cj13/uXkl/7p8Lv+6fC7/tWoA//z8/P/9/f7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/v3/uXEA/71/LP+9fy7/vn8t/7l0AP/m1sn///////r49f/k0cP//////+/m3v+6cQD/v38s/8CALf+/fyz/um4A//z8+//9/v7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f7/vXUA/8KDK//Cgyv/woMr/8KBI//Ei0L//v////7+///6+fb//////8qaZf/Bfxv/woMr/8KEK//DhCv/vnQA//z8+//9/v7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3/wXkA/8WHKv/Fhyr/xYcr/8WHK//CfAD/6dnK//7/////////7uLW/8B6AP/Ehyr/xYcq/8aHKv/HiCr/wXgA//z9/P/9/f7//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f//////yYwr/8iJI//Iiyr/yIsq/8mKKv/IiCD/y5JF////////////z5pY/8iIHP/Jiir/yYoq/8mLKf/JiiT/yYgA//7////9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f//////4saq/8uGAP/Mjyb/zI8o/82PKP/Mjyb/y4wI/9SgXP/UoWD/y4sA/8yOKP/Mjij/zI8o/8yPKP/LhgD/4cOk///////9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f7//v///9imZP/OigD/0pAA/9KSDf/Skg7/0pIP/9KQAP/RjwD/0ZEO/9GRD//QkRD/0JAD/8+JAP/XpGD//f79//39/v/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f7+///////r18D/3bF3/9upaP/aqWn/2qhq/9moav/bqGj/2qhn/9moZ//ap2X/3bB2/+vVvv/+/////f7+//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/+//////////////////////////////////////////////////////////7////9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/+/v7///////7+/v/9/f3//f39///////////////////////9/f3//f39//39/f/+/v7///////7+/v/9/f3//f39//39/f/9/f3//f39//7+/v/////////////////+/v7//f39//39/f////////////39/f/9/f3///////////////////////39/f/+/v7///////7+/v/9/f3///////////////////////////////////////39/f/x8fD/pqWk/+7u7v///////////+Xl5f+rqan/xsXF/8C+vv///////f39//7+/v/39vb/p6Wl/+rq6v/+/v7//f39//39/f/9/f3//v7+//v7+/+zsbH/hYKB/6Wjov/08/P///////////+xr67/1tXW////////////7+/v/6KhoP+HhIP/vLu6///////z8/P/p6Wl//Dw8P//////6urq/6inp//OzMz/sK6u/6+trf+urK3/p6Wl//79/f//////AAAA/7Gvr////////////5aUk/9iX13/npub/2hjY////////f39//7+/v/w8O//AAAA/9fX1////////f39//39/f/9/f3//////2NdXf83Liz/rayr/1xYV/8AAAD//v79//////8AAAD/rqys///////w7+//AAAA/15YV/+lo6H/AAAA/3h1c//x8PD/AAAA/+Tk4///////fXl4/2FbWf/My8v/AAAA/4yJiP+JhoX/fXl4//39/f//////paOj/wAAAP8AAAD/AAAA/wAAAP/FxcT/nZqa/3Nwb//////////////////x8fD/AAAA/97d3f/////////////////+/v7/9/b3/wAAAP/e3t7//////+zs6/8AAAD/4+Li//////8QAAD/sbCw//////+rqqr/DAAA////////////2NfX/wAAAP/X1dX/AAAA/+zr6//o5+f/AAAA/+Xk5P/JyMj/AAAA//////////////////39/f/+/v7/4uLi/wAAAP/l4+P/1NLS/wAAAP/5+fn/mZiY/wAAAP8AAAD/OS4r/7q5uP/49/f/AAAA/w8AAP8AAAD/c3Bv/+zr6////////v7+///////29vb/vr69/0hAPv8TAAD//f39//////8QAAD/srCw//////+cmpn/XFdV////////////6enp/wAAAP/EwsP/AAAA/3p3dv9HQT//Qzs4///////Hxsb/AAAA/8vKyf/Ixsb/397e///////8/Pz//////yobFf/Ew8P/r62t/2NeXP//////lpOT/15ZV//c3Nv/vLu7/wAAAP/HxcT/AAAA/7i3tv/Z2dj/cW5t/zUqJv///////////8fHxv8AAAD/OC8s/66trP/8/Pz//v7+//////8UAAD/sbCw//////+bmJj/XFhV////////////6ejo/wAAAP/EwsL/AAAA/6Wjo/+6uLj/VE9O/2pmZf/Pzs7/AAAA/2lmZf9fWln/s7Ky///////9/f3//////6yqqv9mYmH/TEZE/8DAvv//////lZKS/3VwcP///////////woAAP+fm5v/AAAA/97e3v//////zMvL/wAAAP///////////wAAAP+qqaj///////T09P+ko6P//Pz7//////8ZAAD/tLOy//////+opqb/NCom////////////39/f/wAAAP/R0ND/AAAA/+3s7P//////zMzL/wAAAP/Hxsb/AAAA//////////////////39/f/9/f3//////+nn6P8AAAD/AAAA//T09P//////kpGR/0c/PP+6ubn/lJKS/wAAAP/S0ND/AAAA/5iWlv+2tbX/Qzw6/1xYVf///////////2ZhYP9kYF//ysnJ/3l1dP8AAAD/xcTD/7e1tv8AAAD/fHl4/7Szs//DwsL/AAAA/4+NjP/CwcH/RD48/1JOS//x8PD/AAAA/6OhoP+3trX/T0lI/1tWU//Ny8v/AAAA/7Wzs/+zsbH/rq2s//7+/f/9/f3//f39//////+Jh4X/npyb////////////tbKy/399fP98eXj/h4OC/9nY1//5+fn/eXZ1/398fP97eHf/oqCf//f29//+/v7//v7+//T09P+PjIv/PjUy/4SBgP/w8O//oZ+e/3l2df+Fg4L/gn9//3RxcP/Y19f/4d/f/3VxcP9FPDj/mpiX//n5+f/v7+//end2/398e/96d3f/n52c//n4+f/U0tP/fXp6/316ef99enn/cGxr//7+/v/9/f3//f39//39/f///////////////////////////////////////////////////////////////////////////////////////v////////////////////////////////////////////////////////////////////////////////////7+/v/+/v7///////////////////////////////////////////////////////7+/v/9/f3//f39///////+/v7/19bW/8PBwP/My8v/7+/v///////+/v7////+/9fX1v/V1NP/+vr6//39/f/9/f3//////+7u7v/U09L/7Ozr/+fn5//W1tX/2NfX/9jX1v/Y19b/2NfW/9fW1f/l5eT/1tbV/+Df3//09PT/1dTT/97e3f///////f39//39/f//////3t3c/9XU0//7+vv/19fW/9fW1f/X19b/19bW/9fX1v/X19b/1dTT//v8+//9/f3//////9nY2P8AAAD/AAAA/wAAAP8AAAD/AAAA/5COjP///////////wAAAP8AAAD/8/Pz//7+/v/9/f3//////0xGRP8AAAD/ubi4/6ako/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP+RkI//AAAA/3FsbP/b2tr/AAAA/2hiYv///////f39///////l5eT/AAAA/wAAAP/x8fH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA//X09P//////6+rq/wAAAP8AAAD/enZ1/769vf+npaX/AAAA/wAAAP+bmZj//////yEMAv8AAAD/9PTz//7+/v//////v769/wAAAP8AAAD/vby8/6yqqf8AAAD/b2xq/66sq/+qqKj/qqin/6uoqP+wsK//AAAA/3x5eP/e3d3/AAAA/3RwcP///////f39//////9gW1r/IhAG/wAAAP/z8vL/KRgQ/wgAAP+bmJf/rKuq/6upqf+qqaj/pKGh//j4+P//////lJKS/wAAAP+Mion/////////////////397e/wAAAP8AAAD//fz8/yocGP8AAAD/9PTz///////5+Pj/AAAA/ysfGv8AAAD/vby8/6yqqv8AAAD/pKOi///////////////////////NzMv/AAAA/3x5eP/e3d7/AAAA/3Nwb////////////8fGxv8AAAD/LyQg/wAAAP/z8vL/KBYP/wAAAP/m5eX///////////////////////7+/v//////UUtJ/wAAAP/U09P///////39/f/9/f3//////y4hHP8AAAD/5OPj/zYtKv8AAAD/9PPz//////+Vk5L/AAAA/yMQCf8AAAD/vby8/6yqqf8AAAD/oaCf///////9/f3//f39///////Lysr/AAAA/3x5eP/e3d3/AAAA/3RxcP//////+/v7/wIAAP8OAAD/MCUh/wAAAP/z8vL/KBYN/wAAAP/m5eX//////////////////v7+//39/f//////MSMg/wAAAP/X19b///////39/f/9/f3//////0Q6N/8AAAD/3dzc/zkwLf8AAAD/9vb1/+bl5f8AAAD/QDg1/5+dm/8AAAD/vby8/6yqqf8AAAD/oaCf///////9/f3//f39///////Mysr/AAAA/3x4ef/e3d7/AAAA/3VwcP//////n52c/wAAAP+amJb/Qjk2/wAAAP/z8vL/KBUN/wAAAP+2tLP/y8rK/8rIyP/GxcT/7+/u//7+/v//////LBsV/wAAAP/X1tb///////39/f/9/f3//////0M7OP8AAAD/29vb/zkwLf8AAAD/+/v6/2VhX/8AAAD/zs3N/62trP8AAAD/vby8/6ypqf8AAAD/oaCf///////9/f3//f39///////Mysr/AAAA/3x4eP/e3d7/AAAA/3p2dv/w8PD/AAAA/wAAAP/9/f3/HQAA/wAAAP/z8/L/JxQL/ywfHP8AAAD/AAAA/wAAAP8AAAD/1dTU////////////MiUg/wAAAP/X1tb///////39/f/9/f3//////0Q7OP8AAAD/3dzc/zkuLP8AAAD/uLa1/wAAAP9jXl3//////6alpP8AAAD/vby8/6upqf8AAAD/oJ+e///////9/f3//f39///////Mysr/AAAA/3x4ef/e3d3/AAAA/4SBgP96dnX/AAAA/8PCwf//////BAAA/wAAAP/08/P/JhMK/wIAAP+koaD/ube3/7i1tv+ysLD/6urq//7+/v//////V1JP/wAAAP/NzMz///////39/f/9/f3//////xkAAP8AAAD/5uXl/zQpJ/8pHBn/HQMA/wAAAP/m5eX//////6Wko/8AAAD/vb29/6upqf8AAAD/oJ+e///////9/f3//f39///////Mysr/AAAA/3x4eP/e3d3/AAAA/ykcGP8GAAD/WlZT////////////AgAA/wAAAP/z8/P/KBUN/wAAAP/m5eX//////////////////v7+//39/f//////oqCf/wAAAP9mYWD/////////////////wcC//wAAAP8AAAD//////ycVE/8rHhv/AAAA/5iWlf///////////6Sko/8AAAD/vr29/6upqf8AAAD/oJ+e///////9/f3//f39///////Mysr/AAAA/3x4eP/e3d3/AAAA/y0iHv8AAAD/4uHh////////////AgAA/wAAAP/z8vL/JxUN/wAAAP/o6Oj///////////////////////39/f/+/v7/9vb2/wAAAP8AAAD/HAAA/4OAf/9hWlr/AAAA/wAAAP+9vLz//////yIOBP8oGhT/AAAA//n5+f/+/v7//////6Sko/8AAAD/vr29/6upqP8AAAD/oaCf///////9/f3//f39///////Mysr/AAAA/3x4eP/d3Nz/AAAA/wgAAP+Rjo3///////39/f//////BAAA/wAAAP/z8vL/JxUN/x8JAf9ua2r/end3/3l1df95dXX/aWRk//7+/v/9/f3//////+/u7v9ybWz/AAAA/wAAAP8AAAD/JxgN/8PCwf///////////wAAAP8AAAD/wcDA///////9/f3//////56cm/8AAAD/ubi4/6OhoP8AAAD/mJeW///////9/f3//f39///////GxsX/AAAA/21paP/a2tr/AAAA/wAAAP/4+Pf//v7+//39/f//////AAAA/wAAAP/x8PD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA//7+/v/9/f3//f39////////////9vX1/+bm5f/t7Oz////////////9/f3//f7+//Lx8f/y8fH///////39/f/9/f3//v7+//f29v/y8fH/+fn4//f39//y8vH/9/f3//7+/v/9/f3//f39//3+/v/5+fn/8vHx//X09P/7+/v/8vHx//f29v///////f39//39/f/+/v7/8/Ly//Py8v/9/f3/8/Ly//Py8v/z8/L/8/Ly//Py8v/z8vL/8vHx//7+/v/9/f3//f39//39/f/9/f3//v7+///////+/////f39//39/f/9/f3//f39//7+/v/+/v7//f39//39/f/9/f3//f39//7+/v/+/v7//v7+//7+/v/+/v7//v7+//39/f/9/f3//f39//39/f/9/v7//v7+//7+/v/9/f3//v7+//7+/v/9/f3//f39//39/f/9/f3//v7+//7+/v/9/f3//v7+//7+/v/+/v7//v7+//7+/v/+/v7//v7+//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/8/Pz//Pz8//z8/P/8/Pz//Pz8//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Icono de App Creator 24">
+        <h1>🌟 deloper store🌟</h1>
+        <p>¡sube tus aplicaciónes sin ningún tipo de costó para Android y iPhone!</p>
+        <a href="register.html" class="cta">Registrate gratis</a>
+    </header>
+
+    <div class="container">
+        <section class="features">
+            <div class="feature">
+                <h3>✨ aplicaciones de calidad</h3>
+                <p>sube tus aplicaciones de calidad sin ningúna suscripción.</p>
+            </div>
+            <div class="feature">
+                <h3>📄 Varias categorias </h3>
+                <p>sube tu aplicación con diferentes categorías.</p>
+            </div>
+            <div class="feature">
+                <h3>💬 Buen entretenimiento </h3>
+                <p>puedes entretenerte cuando quieras.</p>
+            </div>
+            <div class="feature">
+                <h3>👤 tus datos son seguros</h3>
+                <p>toda tu información son guardados y no le damos a nadie sin permiso de ustedes.</p>
+            </div>
+        </section>
+
+        <!-- Sección para las capturas de pantalla -->
+        <section class="screenshots">
+            <div class="screenshot">
+                <img src="imagen1.jpg" alt="Captura de Pantalla 1">
+            </div>
+            <div class="screenshot">
+                <img src="imagen2.jpg" alt="Captura de Pantalla 2">
+            </div>
+            <div class="screenshot">
+                <img src="imagen3.jpg" alt="Captura de Pantalla 3">
+            </div>
+            <div class="screenshot">
+                <img src="imagen4.jpg" alt="Captura de Pantalla 3">
+            </div>
+        </section>
+
+        <!-- Información adicional -->
+        <section class="extra-info">
+            <h2>🔗 Más Información</h2>
+            <p>Visita nuestra página para obtener más contenido y recursos:</p>
+            <a href="https://onlineappstoreoficial.blogspot.com" class="cta">Explorar Página Web 🌐</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>Desarrollado por <strong>online app store</strong></p>
+        <p>&copy; 2025 - 2030 La mejor tienda de app.</p>
+    </footer>
+</body>
+</html>

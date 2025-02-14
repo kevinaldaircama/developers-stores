@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de Usuario</h2>
+        <form id="registroForm">
+            <input type="text" id="nombre" placeholder="Nombre Completo" required>
+            <input type="text" id="usuario" placeholder="Nombre de Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <input type="text" id="desarrollador" placeholder="Usuario de Desarrollador" required>
+            <button type="submit">Registrar</button>
+        </form>
+
+        <p>Si tienes cuenta, dale clic en Iniciar Sesión.</p>
+        <a href="login.html"><button class="btn-secundario">Iniciar Sesión</button></a>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registroForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const usuario = document.getElementById("usuario").value;
+            const password = document.getElementById("password").value;
+
+            // Guardar en localStorage
+            localStorage.setItem("usuario", usuario);
+            localStorage.setItem("password", password);
+
+            mostrarModal(`Usuario <b>${usuario}</b> creado con éxito. <br> <a href='login.html'><button>Continuar</button></a>`);
+        });
+
+        function mostrarModal(mensaje) {
+            const modal = document.getElementById("modal");
+            const modalText = document.getElementById("modal-text");
+
+            modalText.innerHTML = mensaje;
+            modal.style.display = "flex";
+        }
+    </script>
+</body>
+</html>
