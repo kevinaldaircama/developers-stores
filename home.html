@@ -5,206 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subir Aplicación</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #007bff, #6610f2);
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            color: white;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            color: black;
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            font-size: 24px;
-            font-weight: 600;
-            background: -webkit-linear-gradient(45deg, #ff416c, #ff4b2b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        label {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, select:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
-        }
-
-        button {
-            background: linear-gradient(45deg, #ff416c, #ff4b2b);
-            color: white;
-            padding: 12px;
-            border: none;
-            width: 100%;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #ff4b2b, #ff416c);
-        }
-
-        button:active {
-            transform: scale(1);
-        }
-
-        .hidden {
-            display: none;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.5s, transform 0.5s;
-        }
-
-        .visible {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        * { box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; color: black; }
+        select, input, textarea, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        button { background: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background: #218838; }
+        .hidden { display: none; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 10px; text-align: center; }
+        .cerrar { background: red; color: white; border: none; padding: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
 
+    <h1>🚀 ¡Bienvenido! Sube tu Aplicación Aquí</h1>
+    <p>Selecciona una plataforma para continuar:</p>
+
     <div class="container">
-        <h1>🚀 Subir Aplicación</h1>
-        <p id="mensaje-bienvenida">Bienvenido! Completa los datos para subir tu app.</p>
-
         <form id="appForm">
-            <div class="section">
-                <label>Selecciona Plataforma:</label>
-                <select id="plataforma" required>
-                    <option value="">Seleccione...</option>
-                    <option value="Android">Android</option>
-                    <option value="iPhone">iPhone</option>
-                </select>
-            </div>
-
-            <div id="formularioExtra" class="hidden">
-                <div class="section">
-                    <label>Nombre de la App:</label>
-                    <input type="text" id="nombre" required>
-                </div>
-                <div class="section">
-                    <label>Versión:</label>
-                    <input type="text" id="version" required>
-                </div>
-                <div class="section">
-                    <label>Nombre del Creador:</label>
-                    <input type="text" id="creador" required>
-                </div>
-                <div class="section">
-                    <label>Subir Logo:</label>
-                    <input type="file" id="logo" accept="image/*" required>
-                </div>
-                <div class="section">
-                    <label>Subir Captura de Pantalla:</label>
-                    <input type="file" id="captura" accept="image/*" required>
-                </div>
-                <div class="section">
-                    <label>Categoría:</label>
-                    <input type="text" id="categoria" required>
-                </div>
-                <div class="section">
-                    <label>Política de Privacidad (URL):</label>
-                    <input type="url" id="politica" required>
-                </div>
-                <div class="section">
-                    <label>Correo de Soporte:</label>
-                    <input type="email" id="correo" required>
-                </div>
-                <div class="section">
-                    <label>¿Contiene Anuncios?</label>
-                    <select id="anuncios">
-                        <option value="Sí">Sí</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-                <div class="section">
-                    <label>¿Está en Beta?</label>
-                    <select id="beta">
-                        <option value="Sí">Sí</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-                <div class="section">
-                    <label>¿Se actualizará?</label>
-                    <select id="actualizacion">
-                        <option value="Sí">Sí</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-
-                <button type="submit">🚀 Enviar para Revisión</button>
-            </div>
+            <label>Plataforma:</label>
+            <select id="plataforma" required>
+                <option value="">Selecciona</option>
+                <option value="android">Android</option>
+                <option value="iphone">iPhone</option>
+            </select>
         </form>
     </div>
 
+    <div id="formularioCompleto" class="container hidden">
+        <form id="fullForm">
+            <label>Nombre de la App:</label>
+            <input type="text" id="nombre" required>
+
+            <label>Versión:</label>
+            <input type="text" id="version" required>
+
+            <label>Descripción:</label>
+            <textarea id="descripcion" required></textarea>
+
+            <label>Logo:</label>
+            <input type="file" id="logo" accept="image/*" required>
+
+            <label>Captura de Pantalla:</label>
+            <input type="file" id="captura" accept="image/*" required>
+
+            <label>Política de Privacidad:</label>
+            <input type="url" id="politica" required>
+
+            <label>Nombre del Creador:</label>
+            <input type="text" id="creador" required>
+
+            <label>Correo de Soporte:</label>
+            <input type="email" id="correo" required>
+
+            <label>¿Contiene anuncios?</label>
+            <select id="anuncios">
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <label>¿Está en Beta?</label>
+            <select id="beta">
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="submit">Subir Aplicación</button>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>🎉 Aplicación subida con éxito</h2>
+            <button class="cerrar" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
     <script>
-        document.getElementById("plataforma").addEventListener("change", function() {
-            let formularioExtra = document.getElementById("formularioExtra");
-            if (this.value) {
-                formularioExtra.classList.add("visible");
-                formularioExtra.classList.remove("hidden");
-            } else {
-                formularioExtra.classList.add("hidden");
-                formularioExtra.classList.remove("visible");
-            }
+        document.getElementById('plataforma').addEventListener('change', function() {
+            document.getElementById('formularioCompleto').classList.remove('hidden');
         });
 
-        document.getElementById("appForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("✅ Su aplicación se envió con éxito y está en revisión.");
-            window.location.href = "revisar.html";
+        document.getElementById('fullForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let appData = {
+                nombre: document.getElementById('nombre').value,
+                version: document.getElementById('version').value,
+                descripcion: document.getElementById('descripcion').value,
+                politica: document.getElementById('politica').value,
+                creador: document.getElementById('creador').value,
+                correo: document.getElementById('correo').value,
+                anuncios: document.getElementById('anuncios').value,
+                beta: document.getElementById('beta').value
+            };
+            localStorage.setItem('appData', JSON.stringify(appData));
+            document.getElementById('modal').style.display = 'flex';
         });
 
-        setTimeout(() => {
-            document.getElementById("mensaje-bienvenida").style.opacity = "0";
-        }, 4000);
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
     </script>
 
 </body>
