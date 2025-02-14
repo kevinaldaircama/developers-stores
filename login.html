@@ -16,7 +16,7 @@
         </form>
 
         <p>Si no tienes una cuenta, dale clic en Registrarse.</p>
-        <a href="home.html"><button class="btn-secundario">Registrarse</button></a>
+        <a href="register.html"><button class="btn-secundario">Registrarse</button></a>
     </div>
 
     <!-- Modal -->
@@ -36,7 +36,7 @@
             const passwordRegistrado = localStorage.getItem("password");
 
             if (usuarioIngresado === usuarioRegistrado && passwordIngresado === passwordRegistrado) {
-                mostrarModal("Inicio de sesión exitoso. <br> <a href='index.html'><button>Continuar</button></a>");
+                mostrarModal("Inicio de sesión exitoso. <br> <a href='home.html'><button>Continuar</button></a>");
             } else {
                 mostrarModal("Datos no registrados. Intente de nuevo.");
             }
